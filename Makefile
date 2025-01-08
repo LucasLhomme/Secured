@@ -5,7 +5,7 @@
 ## MakeFile dans le fichier root
 ##
 
-NAME = my_ls
+NAME = libhashtable.a
 
 CFLAGS += -g -Wall -Wextra -W -Iinclude -Isrc/lib/include
 

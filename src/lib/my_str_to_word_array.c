@@ -41,7 +41,7 @@ char **my_str_to_word_array(const char *str)
     int end;
     char **tab = malloc(sizeof(char *) * (count_word(str) + 1));
 
-    if (tab == NULL || str == NULL) 
+    if (tab == NULL || str == NULL)
         return NULL;
     for (int k = 0; str[k] != '\0'; k++) {
         if (isalphanum(str[k]) && (k == 0 || isnonalphanum(str[k - 1])))

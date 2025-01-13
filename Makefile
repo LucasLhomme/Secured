@@ -9,7 +9,12 @@ NAME = libhashtable.a
 
 CFLAGS += -g -Wall -Wextra -W -Iinclude -Isrc/lib/include
 
-SRC =  ./src/main.c\
+SRC =	./src/ht_search.c\
+./src/ht_insert.c\
+./src/ht_dump.c\
+./src/ht_delete.c\
+./src/delete_hashtable.c\
+./src/new_hashtable.c\
 
 OBJ  	=	 $(SRC:.c=.o)
 
@@ -18,7 +23,8 @@ all: 	$(NAME)
 
 $(NAME):	$(OBJ)
 		$(MAKE) -C src/lib all
-		gcc $(CFLAGS) -o $(NAME) $(OBJ) libmy.a
+		gcc $(CFLAGS) main.c -o $(NAME) $(OBJ) libmy.a
+		rm libmy.a
 
 clean || clear:
 		$(MAKE) -C src/lib clean

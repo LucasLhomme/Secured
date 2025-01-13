@@ -8,5 +8,5 @@
 
 void ht_dump(hashtable_t *ht)
 {
-    return 84;
+    return;
 }

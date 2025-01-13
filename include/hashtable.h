@@ -9,8 +9,7 @@
     #define HASHTABLE_H
 
 typedef struct hashtable_s {
-    char *name;
-    char *phone_number;
+    char *password;
 } hashtable_t;
 
 // Hash function

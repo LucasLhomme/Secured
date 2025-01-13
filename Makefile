@@ -23,7 +23,7 @@ all: 	$(NAME)
 
 $(NAME):	$(OBJ)
 		$(MAKE) -C src/lib all
-		gcc $(CFLAGS) main.c -o $(NAME) $(OBJ) libmy.a
+		gcc $(CFLAGS) -o $(NAME) $(OBJ) libmy.a
 		rm libmy.a
 
 clean || clear:

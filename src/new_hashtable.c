@@ -7,7 +7,7 @@
 #include "hashtable.h"
 #include "lib.h"
 
-int hash(char *key, int len)
+hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 {
     return 84;
 }

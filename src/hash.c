@@ -11,11 +11,11 @@ int hash(char *key, int len)
     int bits;
     int n = 10;
 
-    for (int i = 0; i < len; i++){
+    for (int i = 0; key[i] != '\0'; i++){
         bits = key[i];
         hash += ((hash << 5) + bits) * (bits + n);
-        hash = hash % 1000;
+        printf("emplacement : %i, lettre : %c, hash: %i\n", i, key[i], hash);
     }
     hash = hash > 0 ? hash : - hash;
-    return (hash * hash);
+    return hash;
 }

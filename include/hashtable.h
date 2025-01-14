@@ -8,8 +8,16 @@
 #ifndef HASHTABLE_H
     #define HASHTABLE_H
 
+typedef struct node_s {
+    char *key;
+    void *value;
+    struct node_s *next;
+} node_t;
+
 typedef struct hashtable_s {
-    char *password;
+    node_t **number;
+    int size;
+    int (*hash)(char *, int);
 } hashtable_t;
 
 // Hash function

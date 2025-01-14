@@ -20,20 +20,21 @@ hashtable_t **create_hashtable_book(int (*hash)(char *, int), int len)
     return new_table;
 }
 
-void new_hashtable(hashtable_t **address_book, int len, const char *hash)
+hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 {
     hashtable_t *new_table = malloc(sizeof(hashtable_t));
 
-    if (new_table == NULL)
+    if (new_table == NULL || len <= 0 || hash == NULL)
         return NULL;
-    new_table->password = my_strdup(hash);
-    for (int i = 0; i < len; i++){
-        if (address_book[i] == NULL){
-            address_book[i] = new_table;
-            my_printf("new adresse at: %i\n", i);
-            return;
-        }
+    new_table->number = malloc(sizeof(hashtable_t *) * len);
+    if (new_table->number == NULL){
+        free(new_table);
+        return NULL;
     }
-    my_printf("There is no place anymore\n");
-    return 84;
+    for (int i = 0; i < len; i++){
+        new_table->number[i] = NULL;
+    }
+    new_table->size = len;
+    new_table->hash = hash;
+    return new_table;
 }

@@ -10,6 +10,7 @@ NAME = libhashtable.a
 CFLAGS += -g -Wall -Wextra -W -Iinclude -Isrc/lib/include
 
 SRC =	./src/ht_search.c\
+./src/hash.c\
 ./src/ht_insert.c\
 ./src/ht_dump.c\
 ./src/ht_delete.c\

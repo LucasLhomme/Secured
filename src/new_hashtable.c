@@ -20,7 +20,7 @@ hashtable_t **create_hashtable_book(int (*hash)(char *, int), int len)
     return new_table;
 }
 
-void add_address(hashtable_t **address_book, int len, const char *hash)
+void new_hashtable(hashtable_t **address_book, int len, const char *hash)
 {
     hashtable_t *new_table = malloc(sizeof(hashtable_t));
 

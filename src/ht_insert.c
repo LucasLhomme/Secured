@@ -6,4 +6,7 @@
 */
 #include "hashtable.h"
 
-void ht_dump(hashtable_t *ht);
+void ht_dump(hashtable_t *ht)
+{
+    return 84;
+}

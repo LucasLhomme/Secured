@@ -6,6 +6,7 @@
 */
 #include "hashtable.h"
 #include "lib.h"
+#include "my.h"
 
 
 hashtable_t **create_hashtable_book(int (*hash)(char *, int), int len)
@@ -26,7 +27,7 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
 
     if (new_table == NULL || len <= 0 || hash == NULL)
         return NULL;
-    new_table->number = malloc(sizeof(hashtable_t *) * len);
+    new_table->number = malloc(sizeof(node_t *) * len);
     if (new_table->number == NULL){
         free(new_table);
         return NULL;

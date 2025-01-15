@@ -4,15 +4,10 @@
 ** File description:
 ** hashtable.h
 */
+#include "my.h"
 
 #ifndef HASHTABLE_H
     #define HASHTABLE_H
-
-typedef struct node_s {
-    char *key;
-    void *value;
-    struct node_s *next;
-} node_t;
 
 typedef struct hashtable_s {
     node_t **number;

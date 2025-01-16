@@ -31,7 +31,7 @@ clean || clear:
 		rm -f $(OBJ)
 
 fclean:
-		rm -f $(NAME) $(OBJ) libmy.a
+		rm -f $(NAME) $(OBJ) libmy.a debug
 
 re:
 		$(MAKE) fclean

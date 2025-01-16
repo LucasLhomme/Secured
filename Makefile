@@ -37,7 +37,12 @@ re:
 		$(MAKE) fclean
 		$(MAKE) all
 
-debug: $(CFLAGS) += $(DEBUG)
-debug: re
-debug: 
-		gcc $(DEBUG) $(CFLAGS) -o debug main.c $(NAME)
+debug: 	$(NAME)
+
+$(NAME):	$(OBJ)
+		$(MAKE) -C src/lib all
+		gcc -g $(CFLAGS) main.c -o debug $(OBJ) libmy.a
+
+redebug:
+		$(MAKE) fclean
+		$(MAKE) debug

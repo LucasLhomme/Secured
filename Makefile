@@ -31,15 +31,15 @@ clean || clear:
 		rm -f $(OBJ)
 
 fclean:
-		rm -f $(NAME) $(OBJ) libmy.a debug
+		rm -f $(NAME) debug $(OBJ) libmy.a
 
 re:
 		$(MAKE) fclean
 		$(MAKE) all
 
-debug: 	$(NAME)
+debug: 	$(DEBUG)
 
-$(NAME):	$(OBJ)
+$(DEBUG):	$(OBJ)
 		$(MAKE) -C src/lib all
 		gcc -g $(CFLAGS) main.c -o debug $(OBJ) libmy.a
 

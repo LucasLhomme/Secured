@@ -6,8 +6,8 @@
 ##
 
 NAME = libhashtable.a
-
-CFLAGS += -g -Wall -Wextra -W -Iinclude -Isrc/lib/include
+DEBUG = -g
+CFLAGS += -Wall -Wextra -W -Iinclude -Isrc/lib/include
 
 SRC =	./src/ht_search.c\
 ./src/hash.c\
@@ -24,8 +24,7 @@ all: 	$(NAME)
 
 $(NAME):	$(OBJ)
 		$(MAKE) -C src/lib all
-		ar rcT -o $(NAME) $(OBJ)  libmy.a
-		rm libmy.a
+		ar rcT -o $(NAME) $(OBJ) libmy.a
 
 clean || clear:
 		$(MAKE) -C src/lib clean
@@ -37,3 +36,8 @@ fclean:
 re:
 		$(MAKE) fclean
 		$(MAKE) all
+
+debug: $(CFLAGS) += $(DEBUG)
+debug: re
+debug: 
+		gcc $(DEBUG) $(CFLAGS) -o debug main.c $(NAME)

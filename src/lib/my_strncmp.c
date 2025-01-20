@@ -6,15 +6,11 @@
 */
 #include <stddef.h>
 
-int my_strncmp(char const *s1, char const *s2, size_t n)
+int my_strncmp(char *const str1, char *const str2)
 {
-    for (size_t i = 0; i < n; i++) {
-        if (s1[i] != s2[i]) {
-            return (s1[i] - s2[i]);
-        }
-        if (s1[i] == '\0' || s2[i] == '\0') {
-            break;
-        }
+    for (int i = 0; str1[i] != '\0' && str2[i] != '\0'; i++) {
+        if (str1[i] != str2[i])
+            return 1;
     }
     return 0;
 }

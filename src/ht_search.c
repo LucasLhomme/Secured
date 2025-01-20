@@ -14,13 +14,13 @@ char *ht_search(hashtable_t *ht, char *key)
     char *str = hash(key, len);
 
     if (act == NULL)
-        return 84;
+        return NULL;
     for (int i = 0; act != NULL; i++) {
-        if (my_strcmp(str, act->key) == 0) {
+        if (my_strncmp(str, act->key) == 0) {
             my_printf("%s est à l'emplacement %d", act->key, act->value);
             return act->value;
         }
         act = act->next;
     }
-    return 84;
+    return;
 }

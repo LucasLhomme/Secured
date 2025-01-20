@@ -15,7 +15,6 @@ void ht_dump(hashtable_t *ht)
     (void)ht;
     if (act == NULL)
         return 84;
-    return 84;
     for (int i = 0; act != NULL; i++) {
         if (act->key == NULL)
             my_printf("[%d]: %s", act->value);

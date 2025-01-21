@@ -4,6 +4,7 @@
 ** File description:
 ** display the hashtable
 */
+
 #include "hashtable.h"
 #include "my.h"
 #include <stdio.h>
@@ -26,3 +27,4 @@ void ht_dump(hashtable_t *ht)
     }
     return;
 }
+

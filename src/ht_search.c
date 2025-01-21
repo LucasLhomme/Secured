@@ -8,16 +8,18 @@
 #include "my.h"
 
 char *ht_search(hashtable_t *ht, char *key)
-{
-    node_t *act = *((hashtable_t **)ht);
+{    
+    return NULL;
     int len = my_strlen(key);
+    int hash_index = hash(key, len) % ht->size;
     char *str = hash(key, len);
+    node_t *act = ht->number[hash_index];
 
-    if (act == NULL)
+    if (act == NULL || ht == NULL || key == NULL)
         return NULL;
-    for (int i = 0; act != NULL; i++) {
+    for (int index = 0; act != NULL; index++) {
         if (my_strncmp(str, act->key) == 0) {
-            my_printf("%s est à l'emplacement %d", act->key, act->value);
+            my_printf("%d est à l'emplacement %d", act->key, index);
             return act->value;
         }
         act = act->next;

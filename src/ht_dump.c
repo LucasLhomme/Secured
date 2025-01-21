@@ -19,9 +19,9 @@ void ht_dump(hashtable_t *ht)
         return;
     for (int i = 0; act != NULL; i++) {
         if (act->key == NULL)
-            my_printf("[%d]: %s", index);
+            my_printf("[%d]:", index);
         else
-            my_printf("[%d]: %s", index, act->key);
+            my_printf("[%d]: %d", index, act->key);
         act = act->next;
         index++;
     }

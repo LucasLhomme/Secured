@@ -7,6 +7,7 @@
 
 #include "hashtable.h"
 #include "my.h"
+#include "lib.h"
 #include <stdio.h>
 
 void ht_dump(hashtable_t *ht)
@@ -17,22 +18,13 @@ void ht_dump(hashtable_t *ht)
     (void)ht;
     act = ht->number[0];
     if (act == NULL)
-        return;
-    printf("Dumping hashtable\n");
-    printf(act->key);
+        return NULL;
     for (int index = 0; act != NULL; index++) {
-        if (act == NULL || act->key == NULL || act->value == NULL) {
+        if (act == NULL || act->key == NULL || act->value == NULL)
             my_printf("[%d]:\n", index);
-            printf("test\n");
-        }
-        else{
-            printf("test2\n");
+        else
             my_printf("[%d]: %d\n", index, act->value);
-            printf("test3\n");
-        }
         act = act->next;
-        printf("%s", act->key);
-        printf("%d\n", index);
     }
     return;
 }

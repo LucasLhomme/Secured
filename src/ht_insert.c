@@ -10,7 +10,6 @@
 int error_hand(hashtable_t *ht, char *key, char *value)
 {
     node_t *new_node = malloc(sizeof(node_t));
-    node_t *current;
 
     if (ht == NULL || ht->number == NULL || key == NULL
     || value == NULL || new_node == NULL)
@@ -28,7 +27,7 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
     new_node->key = my_strdup(key);
     new_node->value = my_strdup(value);
     new_node->next = NULL;
-    if (error_hand == 84)
+    if (error_hand(ht, key, value) == 84)
         return 84;
     if (ht->number[index] == NULL) {
         ht->number[index] = new_node;

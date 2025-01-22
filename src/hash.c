@@ -10,6 +10,7 @@ int hash(char *key, int len)
     int hash = 0;
     int bits;
     int n = 10;
+    (void)len;
 
     for (int i = 0; key[i] != '\0'; i++){
         bits = key[i];

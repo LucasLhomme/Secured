@@ -9,5 +9,6 @@
 
 void delete_hashtable(hashtable_t *ht)
 {
-    return 84;
+    (void)ht;
+    return;
 }

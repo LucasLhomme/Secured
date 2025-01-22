@@ -8,5 +8,7 @@
 
 int ht_delete(hashtable_t *ht, char *key)
 {
+    (void)ht;
+    (void)key;
     return 84;
 }

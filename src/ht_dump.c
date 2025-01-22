@@ -11,19 +11,28 @@
 
 void ht_dump(hashtable_t *ht)
 {
-    node_t *act = *((node_t **)ht);
-    int index = 0;
+
+    node_t *act = malloc(sizeof(node_t));
 
     (void)ht;
+    act = ht->number[0];
     if (act == NULL)
         return;
-    for (int i = 0; act != NULL; i++) {
-        if (act->key == NULL)
-            my_printf("[%d]:", index);
-        else
-            my_printf("[%d]: %d", index, act->key);
+    printf("Dumping hashtable\n");
+    printf(act->key);
+    for (int index = 0; act != NULL; index++) {
+        if (act == NULL || act->key == NULL || act->value == NULL) {
+            my_printf("[%d]:\n", index);
+            printf("test\n");
+        }
+        else{
+            printf("test2\n");
+            my_printf("[%d]: %d\n", index, act->value);
+            printf("test3\n");
+        }
         act = act->next;
-        index++;
+        printf("%s", act->key);
+        printf("%d\n", index);
     }
     return;
 }

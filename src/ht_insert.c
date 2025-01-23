@@ -18,7 +18,7 @@ int error_hand(hashtable_t *ht, char *key, char *value, int index)
 
 int ht_insert(hashtable_t *ht, char *key, char *value)
 {
-    int index = 0;
+    int index;
     node_t *new_node = malloc(sizeof(node_t));
     node_t *current = NULL;
 

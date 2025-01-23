@@ -27,10 +27,14 @@ int delete_node(node_t *current, node_t *previous, hashtable_t *ht, char *key)
 
 int ht_delete(hashtable_t *ht, char *key)
 {
-    int index = ht->hash(key, ht->size) % ht->size;
-    node_t *current = ht->number[index];
-    node_t *previous = NULL;
-
+    int index = 0;
+    node_t *current;
+    node_t *previous;
+    if (ht == NULL || ht->hash == NULL || current == NULL || previous == NULL)
+            return 84;
+    index = ht->hash(key, ht->size) % ht->size;
+    current = ht->number[index];
+    previous = NULL;
     while (current != NULL) {
         delete_node(current, previous, ht, key);
         previous = current;

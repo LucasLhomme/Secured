@@ -11,15 +11,18 @@
 #include <stdio.h>
 
 
-void print_list(hashtable_t *ht, node_t *act, int i) 
+void print_list(hashtable_t *ht, node_t *act, int i)
 {
+    int index = 0;
+
     if (act == NULL) {
         my_printf("[%d]:\n", i);
         return;
     }
     my_printf("[%d]:", i);
     while (act != NULL) {
-        my_printf("\n> %d - %s", ht->hash(act->key, ht->size), (char *)act->value);
+        index = ht->hash(act->key, ht->size);
+        my_printf("\n> %d - %s", index, (char *)act->value);
         act = act->next;
     }
     my_printf("\n");

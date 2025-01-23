@@ -10,21 +10,24 @@
 #include "lib.h"
 #include <stdio.h>
 
-#include "hashtable.h"
-#include "my.h"
-#include <stdio.h>
+
+void print_list(node_t *act, int i) {
+    if (act == NULL) {
+        my_printf("[%d]:\n", i);
+        return;
+    }
+    my_printf("[%d]:", i);
+    while (act != NULL) {
+        my_printf(" %s = %s ", act->key, (char *)act->value);
+        act = act->next;
+    }
+    my_printf("\n");
+}
 
 void ht_dump(hashtable_t *ht)
 {
-    node_t *act;
-
     if (ht == NULL || ht->number == NULL)
         return;
-    for (int i = 0; i < ht->size; i++) {
-        act = ht->number[i];
-        if (act == NULL)
-            my_printf("[%d]:\n", i);
-        else
-            my_printf("[%d]: %s\n", i, act->key);
-    }
+    for (int i = 0; i < ht->size; i++)
+        print_list(ht->number[i], i);
 }

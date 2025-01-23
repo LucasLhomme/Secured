@@ -17,7 +17,6 @@ char *ht_search(hashtable_t *ht, char *key)
         return NULL;
     while (act != NULL) {
         if (my_strncmp(key, act->key) == 0) {
-            my_printf("%d est à l'emplacement %d", key, hash_index);
             return act->value;
         }
         act = act->next;

@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 
-void print_list(node_t *act, int i)
+void print_list(node_t *act, int i) 
 {
     if (act == NULL) {
         my_printf("[%d]:\n", i);

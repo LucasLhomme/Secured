@@ -19,10 +19,8 @@ hashtable_t *new_hashtable(int (*hash)(char *, int), int len)
         free(h_table);
         return NULL;
     }
-    my_printf("len = %d\n", len);
     for (int i = 0; i < len; i++){
         h_table->number[i] = NULL;
-        my_printf("[%i]\n", i);
     }
     h_table->size = len;
     h_table->hash = hash;

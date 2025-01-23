@@ -18,7 +18,7 @@ void print_list(node_t *act, int i) {
     }
     my_printf("[%d]:", i);
     while (act != NULL) {
-        my_printf(" %s = %s ", act->key, (char *)act->value);
+        my_printf("\n> %s - %s", act->key, (char *)act->value);
         act = act->next;
     }
     my_printf("\n");

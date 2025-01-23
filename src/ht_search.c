@@ -10,7 +10,7 @@
 char *ht_search(hashtable_t *ht, char *key)
 {
     int hash_index = 0;
-    node_t *act;
+    node_t *act = NULL;
 
     if (act == NULL || ht == NULL || key == NULL)
         return NULL;

@@ -5,7 +5,6 @@
 ** Delete Hashtable
 */
 #include "hashtable.h"
-#include "my.h"
 #include "lib.h"
 
 int delete_node(node_t *current, node_t *previous, hashtable_t *ht, char *key)

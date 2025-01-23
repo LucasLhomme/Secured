@@ -5,7 +5,6 @@
 ** ht_search
 */
 #include "hashtable.h"
-#include "my.h"
 #include "lib.h"
 
 char *ht_search(hashtable_t *ht, char *key)

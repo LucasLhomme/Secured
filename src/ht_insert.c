@@ -5,10 +5,9 @@
 ** insert in the hash table
 */
 #include "hashtable.h"
-#include "my.h"
 #include "lib.h"
 
-int const handling_errors(hashtable_t *ht, char *key, char *value)
+int handling_errors(hashtable_t const *ht, const char *key, char const *value)
 {
     if (ht == NULL || ht->number == NULL || key == NULL
     || value == NULL)
@@ -16,15 +15,19 @@ int const handling_errors(hashtable_t *ht, char *key, char *value)
     return 0;
 }
 
-node_t *create_new_node(char *key, char *value)
+node_t *create_new_node(char const *key, const char *value)
 {
     node_t *new_node = malloc(sizeof(node_t));
 
-    if (new_node == NULL)
+    if (new_node == NULL) {
+        free(new_node);
         return NULL;
+    }
     new_node->key = my_strdup(key);
     new_node->value = my_strdup(value);
     new_node->next = NULL;
+
+
     if (new_node->key == NULL || new_node->value == NULL) {
         free(new_node->key);
         free(new_node->value);
@@ -34,7 +37,7 @@ node_t *create_new_node(char *key, char *value)
     return new_node;
 }
 
-void insert_node(hashtable_t *ht, node_t *new_node, int index)
+void insert_node(hashtable_t const *ht, node_t *new_node, int index)
 {
     node_t *current = ht->number[index];
 
@@ -49,17 +52,19 @@ void insert_node(hashtable_t *ht, node_t *new_node, int index)
 
 int ht_insert(hashtable_t *ht, char *key, char *value)
 {
-    int index;
+    int index = 0;
     node_t *new_node = create_new_node(key, value);
 
     if (new_node == NULL)
         return 84;
-    if (handling_errors(ht, key, value) == 84)
+    if (handling_errors(ht, key, value) == 84) {
+        free(new_node->key);
+        free(new_node->value);
+        free(new_node);
         return 84;
+    }
     index = ht->hash(key, ht->size);
     index = index % ht->size;
-    if (new_node == NULL)
-        return 84;
     insert_node(ht, new_node, index);
     return 0;
 }

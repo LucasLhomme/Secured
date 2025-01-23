@@ -26,8 +26,6 @@ node_t *create_new_node(char const *key, const char *value)
     new_node->key = my_strdup(key);
     new_node->value = my_strdup(value);
     new_node->next = NULL;
-
-
     if (new_node->key == NULL || new_node->value == NULL) {
         free(new_node->key);
         free(new_node->value);

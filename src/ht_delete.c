@@ -23,6 +23,7 @@ int delete_node(node_t *current, node_t *previous, hashtable_t *ht, char *key)
         free(current);
         return 0;
     }
+    return 0;
 }
 
 int ht_delete(hashtable_t *ht, char *key)

@@ -19,6 +19,7 @@ int const handling_errors(hashtable_t *ht, char *key, char *value)
 node_t *create_new_node(char *key, char *value)
 {
     node_t *new_node = malloc(sizeof(node_t));
+
     if (new_node == NULL)
         return NULL;
     new_node->key = my_strdup(key);
@@ -36,6 +37,7 @@ node_t *create_new_node(char *key, char *value)
 void insert_node(hashtable_t *ht, node_t *new_node, int index)
 {
     node_t *current = ht->number[index];
+
     if (current == NULL) {
         ht->number[index] = new_node;
     } else {

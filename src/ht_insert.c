@@ -8,7 +8,7 @@
 #include "my.h"
 #include "lib.h"
 
-int error_hand(hashtable_t *ht, char *key, char *value)
+int const handling_errors(hashtable_t *ht, char *key, char *value)
 {
     if (ht == NULL || ht->number == NULL || key == NULL
     || value == NULL)
@@ -52,7 +52,7 @@ int ht_insert(hashtable_t *ht, char *key, char *value)
 
     if (new_node == NULL)
         return 84;
-    if (error_hand(ht, key, value) == 84)
+    if (handling_errors(ht, key, value) == 84)
         return 84;
     index = ht->hash(key, ht->size);
     index = index % ht->size;

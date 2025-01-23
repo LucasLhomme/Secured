@@ -7,7 +7,7 @@
 
 NAME = libhashtable.a
 DEBUG = -g
-CFLAGS += -Wall -Wextra -W -Iinclude -Isrc/lib/include
+CFLAGS += -g -Wall -Wextra -W -Iinclude -Isrc/lib/include
 
 SRC =	./src/ht_search.c\
 ./src/hash.c\

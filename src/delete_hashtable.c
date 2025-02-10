@@ -6,9 +6,6 @@
 */
 
 #include "hashtable.h"
-#include "my.h"
-
-#include "hashtable.h"
 #include "lib.h"
 
 void delete_hashtable(hashtable_t *ht)

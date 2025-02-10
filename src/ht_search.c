@@ -15,7 +15,6 @@ char *ht_search(hashtable_t *ht, char *key)
     if (act == NULL || ht == NULL || key == NULL || ht->number == NULL)
         return NULL;
     hash_index = hash(key, ht->size) % ht->size;
-    printf("HASH INDEX: %d\n", hash_index);
     act = ht->number[hash_index];
     while (act != NULL) {
         if (my_strncmp(key, act->key) == 0)

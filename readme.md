@@ -38,5 +38,5 @@ void ht_dump(hashtable_t *ht);
 
 ## Authors
 
-- @LucasLhomme
-- @jawedlahrouri
+- [@LucasLhomme](https://github.com/LucasLhomme)
+- [@jawedlahrouri](https://github.com/jawedlahrouri)

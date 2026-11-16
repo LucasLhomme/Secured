@@ -4,6 +4,7 @@
 [![Build: Make](https://img.shields.io/badge/Build-Makefile-orange.svg)](Makefile)
 [![Module: B-CPE-110](https://img.shields.io/badge/Epitech-B--CPE--110-blue.svg)](https://www.epitech.eu/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Academic Year: 2024-2025](https://img.shields.io/badge/Academic%20Year-2024--2025%20(Tek1)-blueviolet.svg)](#)
 
 > **Secured is a robust, modular Hash Table library implemented in pure C**, developed as part of Epitech's elementary programming curriculum.
 
@@ -14,6 +15,7 @@
 The goal of **Secured** is to design and implement an in-memory associative key-value storage engine using an efficient hashing algorithm and collision resolution strategy, providing near $O(1)$ amortized time complexity for insertions, lookups, and deletions.
 
 ### Academic Context
+- **Academic Year:** First Year / Tek1 (2024 – 2025)
 - **Institution:** Epitech (First Year)
 - **Module:** B-CPE-110 — Elementary Programming
 - **Deliverable:** Static library archive `libhashtable.a`
